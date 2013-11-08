@@ -10,7 +10,6 @@
 		0904A42D182BF18500FD9D5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0904A42C182BF18500FD9D5D /* Foundation.framework */; };
 		0904A42F182BF18500FD9D5D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0904A42E182BF18500FD9D5D /* CoreGraphics.framework */; };
 		0904A431182BF18500FD9D5D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0904A430182BF18500FD9D5D /* UIKit.framework */; };
-		0904A437182BF18500FD9D5D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0904A435182BF18500FD9D5D /* InfoPlist.strings */; };
 		0904A439182BF18500FD9D5D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0904A438182BF18500FD9D5D /* main.m */; };
 		0904A43D182BF18500FD9D5D /* PHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0904A43C182BF18500FD9D5D /* PHAppDelegate.m */; };
 		0904A43F182BF18500FD9D5D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0904A43E182BF18500FD9D5D /* Images.xcassets */; };
@@ -19,6 +18,8 @@
 		0904A448182BF18500FD9D5D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0904A430182BF18500FD9D5D /* UIKit.framework */; };
 		0904A450182BF18500FD9D5D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0904A44E182BF18500FD9D5D /* InfoPlist.strings */; };
 		0904A452182BF18500FD9D5D /* photoPickerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0904A451182BF18500FD9D5D /* photoPickerTests.m */; };
+		0904A460182BF47A00FD9D5D /* PHCameraVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0904A45E182BF47A00FD9D5D /* PHCameraVC.m */; };
+		093F69F2182D18EB00037290 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 093F69F1182D18EB00037290 /* Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +38,6 @@
 		0904A42E182BF18500FD9D5D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		0904A430182BF18500FD9D5D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0904A434182BF18500FD9D5D /* photoPicker-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "photoPicker-Info.plist"; sourceTree = "<group>"; };
-		0904A436182BF18500FD9D5D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0904A438182BF18500FD9D5D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0904A43A182BF18500FD9D5D /* photoPicker-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "photoPicker-Prefix.pch"; sourceTree = "<group>"; };
 		0904A43B182BF18500FD9D5D /* PHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PHAppDelegate.h; sourceTree = "<group>"; };
@@ -48,6 +48,9 @@
 		0904A44D182BF18500FD9D5D /* photoPickerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "photoPickerTests-Info.plist"; sourceTree = "<group>"; };
 		0904A44F182BF18500FD9D5D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0904A451182BF18500FD9D5D /* photoPickerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = photoPickerTests.m; sourceTree = "<group>"; };
+		0904A45D182BF47A00FD9D5D /* PHCameraVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHCameraVC.h; sourceTree = "<group>"; };
+		0904A45E182BF47A00FD9D5D /* PHCameraVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHCameraVC.m; sourceTree = "<group>"; };
+		093F69F1182D18EB00037290 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +110,11 @@
 		0904A432182BF18500FD9D5D /* photoPicker */ = {
 			isa = PBXGroup;
 			children = (
+				0904A45D182BF47A00FD9D5D /* PHCameraVC.h */,
+				0904A45E182BF47A00FD9D5D /* PHCameraVC.m */,
 				0904A43B182BF18500FD9D5D /* PHAppDelegate.h */,
 				0904A43C182BF18500FD9D5D /* PHAppDelegate.m */,
+				093F69F1182D18EB00037290 /* Storyboard.storyboard */,
 				0904A43E182BF18500FD9D5D /* Images.xcassets */,
 				0904A433182BF18500FD9D5D /* Supporting Files */,
 			);
@@ -119,7 +125,6 @@
 			isa = PBXGroup;
 			children = (
 				0904A434182BF18500FD9D5D /* photoPicker-Info.plist */,
-				0904A435182BF18500FD9D5D /* InfoPlist.strings */,
 				0904A438182BF18500FD9D5D /* main.m */,
 				0904A43A182BF18500FD9D5D /* photoPicker-Prefix.pch */,
 			);
@@ -203,6 +208,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				fr,
 			);
 			mainGroup = 0904A420182BF18500FD9D5D;
 			productRefGroup = 0904A42A182BF18500FD9D5D /* Products */;
@@ -220,8 +226,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0904A437182BF18500FD9D5D /* InfoPlist.strings in Resources */,
 				0904A43F182BF18500FD9D5D /* Images.xcassets in Resources */,
+				093F69F2182D18EB00037290 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0904A43D182BF18500FD9D5D /* PHAppDelegate.m in Sources */,
+				0904A460182BF47A00FD9D5D /* PHCameraVC.m in Sources */,
 				0904A439182BF18500FD9D5D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,14 +271,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0904A435182BF18500FD9D5D /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0904A436182BF18500FD9D5D /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		0904A44E182BF18500FD9D5D /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -365,7 +364,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "photoPicker/photoPicker-Prefix.pch";
 				INFOPLIST_FILE = "photoPicker/photoPicker-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -378,7 +379,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "photoPicker/photoPicker-Prefix.pch";
 				INFOPLIST_FILE = "photoPicker/photoPicker-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -444,6 +447,7 @@
 				0904A457182BF18500FD9D5D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0904A458182BF18500FD9D5D /* Build configuration list for PBXNativeTarget "photoPickerTests" */ = {
 			isa = XCConfigurationList;
@@ -452,6 +456,7 @@
 				0904A45A182BF18500FD9D5D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
