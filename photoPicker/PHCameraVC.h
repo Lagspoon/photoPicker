@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PHCameraVC : UIViewController
+@interface PHCameraVC : UIViewController <UIImagePickerControllerDelegate>
 
 @end
