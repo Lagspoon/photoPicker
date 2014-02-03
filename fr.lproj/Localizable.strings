@@ -1,9 +1,0 @@
-/* 
-  Localizable.strings
-  photoPicker
-
-  Created by Olivier Delecueillerie on 08/11/2013.
-  Copyright (c) 2013 Olivier Delecueillerie. All rights reserved.
-*/
-"Error" = "Erreur" ;
-"Device has no camera" = "L'appareil n'a pas d'appareil photo";
