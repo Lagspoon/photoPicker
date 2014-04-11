@@ -9,95 +9,118 @@
 #import "PHCameraVC.h"
 
 @interface PHCameraVC ()
+@property (weak, nonatomic) IBOutlet UIButton *buttonCamera;
 
-@property (nonatomic, weak) IBOutlet UIImageView *imageView;
-@property (nonatomic, weak) IBOutlet UIToolbar *toolBar;
 @property (nonatomic) UIImagePickerController *imagePickerController;
-@property (nonatomic) NSMutableArray *capturedImages;
 
 @end
 
 @implementation PHCameraVC
 
+
+////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+//LAZY INSTANCIATION
+////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+
+- (BOOL) camera {
+    if (!_camera) _camera = YES;
+    return _camera;
+}
+
+- (NSData *) capturedImage {
+    if (!_capturedImage) _capturedImage = [[NSData alloc] init];
+    return _capturedImage;
+}
+
+- (UIImagePickerController *) imagePickerController {
+    if (!_imagePickerController) {
+
+        UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+        imagePickerController.modalPresentationStyle = UIModalPresentationCurrentContext;
+        imagePickerController.delegate = (id)self;
+
+        if (self.camera) {
+            if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+                imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+            } else {
+#warning check the Localization file
+                UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil)
+                                                                      message:NSLocalizedString(@"Device has no camera",nil)
+                                                                     delegate:nil
+                                                            cancelButtonTitle:@"OK"
+                                                            otherButtonTitles: nil];
+                [myAlertView show];
+
+            }
+
+        } else {
+            imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+
+        }
+        //The user wants to use the camera interface.
+        imagePickerController.showsCameraControls = YES;
+        
+        _imagePickerController = imagePickerController;
+    }
+    return _imagePickerController;
+}
+
+
+////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+//OVERRIDEN METHOD
+////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+
+- (id) initWithCamera:(BOOL) camera {
+    self = [super init];
+    if (self) self.camera = camera;
+    return self;
+}
+////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 //VIEW LIFECYCLE
 ////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.capturedImages = [[NSMutableArray alloc] init];
-    
-    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
-    {
-        // There is not a camera on this device, so don't show the camera button.
-        NSMutableArray *toolbarItems = [self.toolBar.items mutableCopy];
-        [toolbarItems removeObjectAtIndex:2];
-        [self.toolBar setItems:toolbarItems animated:NO];
-        #warning optional put an alert when no device available
-#warning check the Localization file
-        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil)
-                                                              message:NSLocalizedString(@"Device has no camera",nil)
-                                                             delegate:nil
-                                                    cancelButtonTitle:@"OK"
-                                                    otherButtonTitles: nil];
-        [myAlertView show];
+
+    if (self.camera) {
+        [self.buttonCamera setImage:[UIImage imageNamed:@"camera"] forState:UIControlStateNormal];
     }
+    else {
+        [self.buttonCamera setImage:[UIImage imageNamed:@"directory"] forState:UIControlStateNormal];
+    }
+
 }
 
+////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 //TRIGGERED ACTION
 ////////////////////////////////////////////////////////////////////////
-- (IBAction)showImagePickerForCamera:(id)sender
-{
-    [self showImagePickerForSourceType:UIImagePickerControllerSourceTypeCamera];
-}
+////////////////////////////////////////////////////////////////////////
 
-- (IBAction)showImagePickerForPhotoPicker:(id)sender
-{
-    [self showImagePickerForSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-}
-
-- (void)showImagePickerForSourceType:(UIImagePickerControllerSourceType)sourceType
-{
-    if (self.imageView.isAnimating)
-    {
-        [self.imageView stopAnimating];
-    }
-    
-    if (self.capturedImages.count > 0)
-    {
-        [self.capturedImages removeAllObjects];
-    }
-    
-    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
-    imagePickerController.modalPresentationStyle = UIModalPresentationCurrentContext;
-    imagePickerController.sourceType = sourceType;
-    imagePickerController.delegate = (id)self;
-    
-    if (sourceType == UIImagePickerControllerSourceTypeCamera)
-    {
-        //The user wants to use the camera interface.
-        imagePickerController.showsCameraControls = YES;
-    }
-    
-    self.imagePickerController = imagePickerController;
+- (IBAction)takePicture:(id)sender {
     [self presentViewController:self.imagePickerController animated:YES completion:nil];
 }
 
-
+////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 //IMAGE PICKER DELEGATE
 ////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+
 
 // This method is called when an image has been chosen from the library or taken from the camera.
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
-    
-    [self.capturedImages addObject:image];
+    self.capturedImage = UIImagePNGRepresentation(image);
     [self dismissViewControllerAnimated:YES completion:NULL];
-    
-
 }
 
 

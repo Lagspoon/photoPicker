@@ -19,8 +19,10 @@
 		0904A450182BF18500FD9D5D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0904A44E182BF18500FD9D5D /* InfoPlist.strings */; };
 		0904A452182BF18500FD9D5D /* photoPickerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0904A451182BF18500FD9D5D /* photoPickerTests.m */; };
 		0904A460182BF47A00FD9D5D /* PHCameraVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0904A45E182BF47A00FD9D5D /* PHCameraVC.m */; };
-		0947EFEA189FB8C0005962B2 /* photoPicker_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0947EFE9189FB8C0005962B2 /* photoPicker_iPhone.storyboard */; };
-		0947EFEC189FB8CD005962B2 /* photoPicker_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0947EFEB189FB8CD005962B2 /* photoPicker_iPad.storyboard */; };
+		0947545518F74D4700FBBAFC /* photoPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0947545418F74D4700FBBAFC /* photoPicker.storyboard */; };
+		0947545718F74EC000FBBAFC /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 0947545618F74EC000FBBAFC /* camera.png */; };
+		0947545918F7514300FBBAFC /* nothing.png in Resources */ = {isa = PBXBuildFile; fileRef = 0947545818F7514300FBBAFC /* nothing.png */; };
+		0947545B18F751B100FBBAFC /* directory.png in Resources */ = {isa = PBXBuildFile; fileRef = 0947545A18F751B100FBBAFC /* directory.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,9 +43,9 @@
 		0904A434182BF18500FD9D5D /* photoPicker-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "photoPicker-Info.plist"; sourceTree = "<group>"; };
 		0904A438182BF18500FD9D5D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0904A43A182BF18500FD9D5D /* photoPicker-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "photoPicker-Prefix.pch"; sourceTree = "<group>"; };
-		0904A43B182BF18500FD9D5D /* PHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PHAppDelegate.h; sourceTree = "<group>"; };
-		0904A43C182BF18500FD9D5D /* PHAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PHAppDelegate.m; sourceTree = "<group>"; };
-		0904A43E182BF18500FD9D5D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		0904A43B182BF18500FD9D5D /* PHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PHAppDelegate.h; path = photoPicker/PHAppDelegate.h; sourceTree = "<group>"; };
+		0904A43C182BF18500FD9D5D /* PHAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = PHAppDelegate.m; path = photoPicker/PHAppDelegate.m; sourceTree = "<group>"; };
+		0904A43E182BF18500FD9D5D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = photoPicker/Images.xcassets; sourceTree = "<group>"; };
 		0904A444182BF18500FD9D5D /* photoPickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = photoPickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0904A445182BF18500FD9D5D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		0904A44D182BF18500FD9D5D /* photoPickerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "photoPickerTests-Info.plist"; sourceTree = "<group>"; };
@@ -51,8 +53,10 @@
 		0904A451182BF18500FD9D5D /* photoPickerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = photoPickerTests.m; sourceTree = "<group>"; };
 		0904A45D182BF47A00FD9D5D /* PHCameraVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHCameraVC.h; sourceTree = "<group>"; };
 		0904A45E182BF47A00FD9D5D /* PHCameraVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHCameraVC.m; sourceTree = "<group>"; };
-		0947EFE9189FB8C0005962B2 /* photoPicker_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = photoPicker_iPhone.storyboard; path = photoPicker/photoPicker_iPhone.storyboard; sourceTree = "<group>"; };
-		0947EFEB189FB8CD005962B2 /* photoPicker_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = photoPicker_iPad.storyboard; path = photoPicker/photoPicker_iPad.storyboard; sourceTree = "<group>"; };
+		0947545418F74D4700FBBAFC /* photoPicker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = photoPicker.storyboard; sourceTree = "<group>"; };
+		0947545618F74EC000FBBAFC /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		0947545818F7514300FBBAFC /* nothing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nothing.png; sourceTree = "<group>"; };
+		0947545A18F751B100FBBAFC /* directory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = directory.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,9 +86,11 @@
 		0904A420182BF18500FD9D5D = {
 			isa = PBXGroup;
 			children = (
-				0947EFE9189FB8C0005962B2 /* photoPicker_iPhone.storyboard */,
-				0947EFEB189FB8CD005962B2 /* photoPicker_iPad.storyboard */,
 				0904A432182BF18500FD9D5D /* photoPicker */,
+				0904A43B182BF18500FD9D5D /* PHAppDelegate.h */,
+				0904A43C182BF18500FD9D5D /* PHAppDelegate.m */,
+				0904A43E182BF18500FD9D5D /* Images.xcassets */,
+				0904A433182BF18500FD9D5D /* Supporting Files */,
 				0904A44B182BF18500FD9D5D /* photoPickerTests */,
 				0904A42B182BF18500FD9D5D /* Frameworks */,
 				0904A42A182BF18500FD9D5D /* Products */,
@@ -114,12 +120,12 @@
 		0904A432182BF18500FD9D5D /* photoPicker */ = {
 			isa = PBXGroup;
 			children = (
+				0947545418F74D4700FBBAFC /* photoPicker.storyboard */,
 				0904A45D182BF47A00FD9D5D /* PHCameraVC.h */,
 				0904A45E182BF47A00FD9D5D /* PHCameraVC.m */,
-				0904A43B182BF18500FD9D5D /* PHAppDelegate.h */,
-				0904A43C182BF18500FD9D5D /* PHAppDelegate.m */,
-				0904A43E182BF18500FD9D5D /* Images.xcassets */,
-				0904A433182BF18500FD9D5D /* Supporting Files */,
+				0947545618F74EC000FBBAFC /* camera.png */,
+				0947545818F7514300FBBAFC /* nothing.png */,
+				0947545A18F751B100FBBAFC /* directory.png */,
 			);
 			path = photoPicker;
 			sourceTree = "<group>";
@@ -132,6 +138,7 @@
 				0904A43A182BF18500FD9D5D /* photoPicker-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			path = photoPicker;
 			sourceTree = "<group>";
 		};
 		0904A44B182BF18500FD9D5D /* photoPickerTests */ = {
@@ -229,9 +236,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0947EFEA189FB8C0005962B2 /* photoPicker_iPhone.storyboard in Resources */,
+				0947545B18F751B100FBBAFC /* directory.png in Resources */,
+				0947545718F74EC000FBBAFC /* camera.png in Resources */,
+				0947545518F74D4700FBBAFC /* photoPicker.storyboard in Resources */,
 				0904A43F182BF18500FD9D5D /* Images.xcassets in Resources */,
-				0947EFEC189FB8CD005962B2 /* photoPicker_iPad.storyboard in Resources */,
+				0947545918F7514300FBBAFC /* nothing.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

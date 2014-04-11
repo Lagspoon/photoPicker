@@ -25,9 +25,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIMainStoryboardFile</key>
-	<string>photoPicker_iPhone</string>
+	<string>photoPicker</string>
 	<key>UIMainStoryboardFile~ipad</key>
-	<string>photoPicker_iPad</string>
+	<string>photoPicker</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

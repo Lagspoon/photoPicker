@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface PHCameraVC : UIViewController <UIImagePickerControllerDelegate>
+//display the camera or the photo picker 
+@property (nonatomic) BOOL camera;
+
+//the picture captured.
+@property (nonatomic) NSData *capturedImage;
 
 @end
