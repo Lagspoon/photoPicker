@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PHCameraVC.h"
+#import "photoPicker.h"
 
 @interface PHAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) PHCameraVC *viewController;
+@property (strong, nonatomic) photoPicker *viewController;
 
 @end

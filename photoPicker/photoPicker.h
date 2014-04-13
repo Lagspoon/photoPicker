@@ -15,9 +15,12 @@
 - (void) didFinishPickingMedia;
 @end
 
-@interface photoPicker : UIViewController <UIImagePickerControllerDelegate>
+@interface photoPicker : NSObject <UIImagePickerControllerDelegate, photoPickerDelegate>
 //display the camera or the photo picker 
 @property (nonatomic) BOOL camera;
-@property (weak, nonatomic) id <photoPickerDelegate> delegate;
+@property (weak, nonatomic) UIViewController <photoPickerDelegate> *delegateViewController;
+
+- (id) initWithCamera:(BOOL) camera;
+- (void) takePicture;
 
 @end

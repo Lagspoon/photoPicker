@@ -9,9 +9,8 @@
 #import "photoPicker.h"
 
 @interface photoPicker ()
-@property (weak, nonatomic) IBOutlet UIButton *buttonCamera;
 
-@property (nonatomic) UIImagePickerController *imagePickerController;
+@property (nonatomic, strong) UIImagePickerController *imagePickerController;
 
 @end
 
@@ -28,18 +27,16 @@
     return _camera;
 }
 
-
-
 - (UIImagePickerController *) imagePickerController {
     if (!_imagePickerController) {
 
-        UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
-        imagePickerController.modalPresentationStyle = UIModalPresentationCurrentContext;
-        imagePickerController.delegate = (id)self;
+        UIImagePickerController *IPController = [[UIImagePickerController alloc] init];
+        IPController.modalPresentationStyle = UIModalPresentationCurrentContext;
+        IPController.delegate = (id)self;
 
         if (self.camera) {
             if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-                imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+                IPController.sourceType = UIImagePickerControllerSourceTypeCamera;
             } else {
 #warning check the Localization file
                 UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil)
@@ -52,17 +49,22 @@
             }
 
         } else {
-            imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            IPController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
 
         }
         //The user wants to use the camera interface.
-        imagePickerController.showsCameraControls = YES;
+        IPController.showsCameraControls = YES;
         
-        _imagePickerController = imagePickerController;
+        _imagePickerController = IPController;
     }
     return _imagePickerController;
 }
 
+- (id) delegateViewController {
+    //in case no delegate is defined, for example to test this app on device, it is useful to define self as is own delegate
+    if (!_delegateViewController) _delegateViewController = (id) self;
+    return _delegateViewController;
+}
 
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
@@ -75,24 +77,6 @@
     if (self) self.camera = camera;
     return self;
 }
-////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////
-//VIEW LIFECYCLE
-////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-
-    if (self.camera) {
-        [self.buttonCamera setImage:[UIImage imageNamed:@"camera"] forState:UIControlStateNormal];
-    }
-    else {
-        [self.buttonCamera setImage:[UIImage imageNamed:@"directory"] forState:UIControlStateNormal];
-    }
-
-}
 
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
@@ -100,8 +84,8 @@
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 
-- (IBAction)takePicture:(id)sender {
-    [self presentViewController:self.imagePickerController animated:YES completion:nil];
+- (void) takePicture {
+    [self.delegateViewController presentViewController:self.imagePickerController animated:YES completion:nil];
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -115,17 +99,23 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
-    self.delegate.dataImageCaptured = UIImagePNGRepresentation(image);
-    [self.delegate didFinishPickingMedia];
-    [self dismissViewControllerAnimated:YES completion:NULL];
+    self.delegateViewController.dataImageCaptured = [[NSData alloc] initWithData:UIImagePNGRepresentation(image)];
+    [self.delegateViewController didFinishPickingMedia];
+    [self.delegateViewController dismissViewControllerAnimated:YES completion:NULL];
 }
 
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
-    [self dismissViewControllerAnimated:YES completion:NULL];
+    [self.delegateViewController dismissViewControllerAnimated:YES completion:NULL];
 }
+
+////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+//PHOTOPICKER DELEGATE
+////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
     
-    
+
 
 @end
