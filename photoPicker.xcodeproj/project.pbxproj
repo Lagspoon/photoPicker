@@ -13,11 +13,8 @@
 		0904A439182BF18500FD9D5D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0904A438182BF18500FD9D5D /* main.m */; };
 		0904A43D182BF18500FD9D5D /* PHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0904A43C182BF18500FD9D5D /* PHAppDelegate.m */; };
 		0904A43F182BF18500FD9D5D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0904A43E182BF18500FD9D5D /* Images.xcassets */; };
-		0904A446182BF18500FD9D5D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0904A445182BF18500FD9D5D /* XCTest.framework */; };
 		0904A447182BF18500FD9D5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0904A42C182BF18500FD9D5D /* Foundation.framework */; };
 		0904A448182BF18500FD9D5D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0904A430182BF18500FD9D5D /* UIKit.framework */; };
-		0904A450182BF18500FD9D5D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0904A44E182BF18500FD9D5D /* InfoPlist.strings */; };
-		0904A452182BF18500FD9D5D /* photoPickerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0904A451182BF18500FD9D5D /* photoPickerTests.m */; };
 		0904A460182BF47A00FD9D5D /* PHCameraVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0904A45E182BF47A00FD9D5D /* PHCameraVC.m */; };
 		0947EFEA189FB8C0005962B2 /* photoPicker_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0947EFE9189FB8C0005962B2 /* photoPicker_iPhone.storyboard */; };
 		0947EFEC189FB8CD005962B2 /* photoPicker_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0947EFEB189FB8CD005962B2 /* photoPicker_iPad.storyboard */; };
@@ -45,10 +42,6 @@
 		0904A43C182BF18500FD9D5D /* PHAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PHAppDelegate.m; sourceTree = "<group>"; };
 		0904A43E182BF18500FD9D5D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0904A444182BF18500FD9D5D /* photoPickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = photoPickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0904A445182BF18500FD9D5D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		0904A44D182BF18500FD9D5D /* photoPickerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "photoPickerTests-Info.plist"; sourceTree = "<group>"; };
-		0904A44F182BF18500FD9D5D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		0904A451182BF18500FD9D5D /* photoPickerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = photoPickerTests.m; sourceTree = "<group>"; };
 		0904A45D182BF47A00FD9D5D /* PHCameraVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHCameraVC.h; sourceTree = "<group>"; };
 		0904A45E182BF47A00FD9D5D /* PHCameraVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHCameraVC.m; sourceTree = "<group>"; };
 		0947EFE9189FB8C0005962B2 /* photoPicker_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = photoPicker_iPhone.storyboard; path = photoPicker/photoPicker_iPhone.storyboard; sourceTree = "<group>"; };
@@ -70,7 +63,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0904A446182BF18500FD9D5D /* XCTest.framework in Frameworks */,
 				0904A448182BF18500FD9D5D /* UIKit.framework in Frameworks */,
 				0904A447182BF18500FD9D5D /* Foundation.framework in Frameworks */,
 			);
@@ -85,7 +77,6 @@
 				0947EFE9189FB8C0005962B2 /* photoPicker_iPhone.storyboard */,
 				0947EFEB189FB8CD005962B2 /* photoPicker_iPad.storyboard */,
 				0904A432182BF18500FD9D5D /* photoPicker */,
-				0904A44B182BF18500FD9D5D /* photoPickerTests */,
 				0904A42B182BF18500FD9D5D /* Frameworks */,
 				0904A42A182BF18500FD9D5D /* Products */,
 			);
@@ -106,7 +97,6 @@
 				0904A42C182BF18500FD9D5D /* Foundation.framework */,
 				0904A42E182BF18500FD9D5D /* CoreGraphics.framework */,
 				0904A430182BF18500FD9D5D /* UIKit.framework */,
-				0904A445182BF18500FD9D5D /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -130,24 +120,6 @@
 				0904A434182BF18500FD9D5D /* photoPicker-Info.plist */,
 				0904A438182BF18500FD9D5D /* main.m */,
 				0904A43A182BF18500FD9D5D /* photoPicker-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		0904A44B182BF18500FD9D5D /* photoPickerTests */ = {
-			isa = PBXGroup;
-			children = (
-				0904A451182BF18500FD9D5D /* photoPickerTests.m */,
-				0904A44C182BF18500FD9D5D /* Supporting Files */,
-			);
-			path = photoPickerTests;
-			sourceTree = "<group>";
-		};
-		0904A44C182BF18500FD9D5D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				0904A44D182BF18500FD9D5D /* photoPickerTests-Info.plist */,
-				0904A44E182BF18500FD9D5D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -197,7 +169,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = PH;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Olivier Delecueillerie";
 				TargetAttributes = {
 					0904A443182BF18500FD9D5D = {
@@ -239,7 +211,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0904A450182BF18500FD9D5D /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,7 +231,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0904A452182BF18500FD9D5D /* photoPickerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,23 +244,11 @@
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		0904A44E182BF18500FD9D5D /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0904A44F182BF18500FD9D5D /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		0904A453182BF18500FD9D5D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -330,7 +288,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -393,7 +350,6 @@
 		0904A459182BF18500FD9D5D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/photoPicker.app/photoPicker";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -416,7 +372,6 @@
 		0904A45A182BF18500FD9D5D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/photoPicker.app/photoPicker";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
